@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this ontology, please cite it as follows."
+title: "Classical Guitar Teaching Ontology"
+version: "1.0"
+license: "CC-BY-4.0"
+authors:
+  - family-names: "Kakaras"
+    given-names: "Ioannis"
