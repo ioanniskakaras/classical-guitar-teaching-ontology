@@ -1,48 +1,50 @@
 # Classical Guitar Teaching Ontology
 
-This repository contains the OWL ontology for classical guitar instruction and its public release files.
+This repository contains public releases and reference files for **ClassicalGuitarOntology**, an OWL ontology for the curriculum-derived organization of classical guitar instruction.
 
-The ontology models educational knowledge related to Level 1 classical guitar teaching, including learning objectives, instructional practices, technical skills, exercises, studies, repertoire-related material, assessment criteria, posture-related concepts, guitar-part knowledge, and semantic relations among these elements.
+The current public release represents Level 1 classical guitar education through learning objectives, teaching practices, technical skills, exercises, studies, repertoire-related material, assessment criteria, posture- and guitar-positioning concepts, guitar-part knowledge, level membership, and semantic relations among these elements.
 
 ## Public releases
 
 The repository currently documents two public ontology releases:
 
 - `ClassicalGuitarOntology_v1.0.0_release/` — previous public release.
-- `ClassicalGuitarOntology_v1.0.5_release/` — current public release associated with the competency-question-based and expert-informed evaluation study.
+- `ClassicalGuitarOntology_v1.0.5_release/` — current public Level 1 release.
 
 The latest public release is:
 
-`ClassicalGuitarOntology v1.0.5`
+**ClassicalGuitarOntology v1.0.5**
 
-## Current evaluated version
+The previously published public release was `v1.0.0`. Intermediate versions `v1.0.1–v1.0.4` were local working versions used during ontology refinement and were not published as separate GitHub releases.
 
-Version `v1.0.5` is the ontology version evaluated in the study:
+## Relationship to the associated qualitative study
 
-*Competency-Question-Based and Expert-Informed Evaluation of an Ontology-Driven Framework for Level 1 Classical Guitar Education.*
+ClassicalGuitarOntology v1.0.5 is the underlying ontology version referenced in:
 
-This version was evaluated through competency questions, SPARQL queries, SWRL rules, a posture-related instructional case study, and written semi-structured expert interviews with classical guitar teachers.
+**Classical Guitar Teachers’ Perceptions of the Pedagogical Value and Limitations of an Ontology-Driven Framework for Level 1 Instruction: A Qualitative Thematic Study**
 
-## Version history
+The study examined teachers’ interpretations of a pedagogically presented, teacher-facing representation of the framework. It did not constitute technical validation of the OWL artifact. Participants did not inspect the ontology in Protégé, assess competency questions, execute SPARQL queries, examine SWRL rules or reasoner outputs, interact with a functioning application, or complete a separately administered posture case study.
 
-The previously published public release was `v1.0.0`.
-
-Intermediate versions `v1.0.1–v1.0.4` were local working versions used during ontology refinement and were not published as separate GitHub releases. Version `v1.0.5` is therefore the next public release after `v1.0.0`.
+The study therefore supports claims about teachers’ perceptions of the presented framework, not claims about formal ontology correctness, logical consistency, application usability, classroom effectiveness, or effects on student learning.
 
 ## Repository structure
 
 - `ClassicalGuitarOntology_v1.0.0_release/`  
-  Contains the archived files of the previous public release.
+  Archived files of the previous public release.
 
 - `ClassicalGuitarOntology_v1.0.5_release/`  
-  Contains the OWL ontology file and documentation files for the current public release.
+  OWL ontology file and documentation for the current public Level 1 release.
 
 - `ontology/`  
-  Contains ontology working or reference files.
+  Ontology working or reference files.
+
+## Study materials
+
+Supplementary materials for the qualitative teacher-perception study accompany the article separately and are not part of the ontology release. Complete participant response files are not publicly released because of the risk of indirect identification within the small and professionally specific sample.
 
 ## License
 
-This ontology is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+This ontology is released under the **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
 
 ## Citation
 
