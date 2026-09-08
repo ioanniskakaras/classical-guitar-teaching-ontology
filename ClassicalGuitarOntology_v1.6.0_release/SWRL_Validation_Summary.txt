@@ -1,0 +1,203 @@
+CLASSICALGUITARONTOLOGY v1.6.0
+SWRL VALIDATION SUMMARY
+Reviewer-Facing Release Evidence
+======================================================================
+
+Purpose
+----------------------------------------------------------------------
+This compact summary presents the principal validated SWRL results reported
+for ClassicalGuitarOntology v1.6.0. It is intended for reviewer inspection and
+does not replace the complete Phase 2 validation record retained in the frozen
+reproducibility archive.
+
+Authoritative baseline
+----------------------------------------------------------------------
+File:
+ClassicalGuitarOntology_v1.6.0.owl
+
+Baseline SHA-256:
+da8267d5a9be3bd68fe6114157effaeec8cbe377c6ed7cc147274dcc8ceaee36
+
+Status:
+PHASE 1 VALIDATED / FROZEN / UNMODIFIED
+
+
+Final SWRL supplement
+----------------------------------------------------------------------
+File:
+ClassicalGuitarOntology_v1.6.0_SWRL_Supplement_v1.0.0.owl
+
+Supplement SHA-256:
+b9aff4640b0169414717ca06de04bb4887f3f806d04b6fbdc7153296dead29ae
+
+Status:
+VALIDATED / RELEASED / FROZEN
+
+Accepted rules:
+R01_SameLevelSkillAlignment
+R02_ObjectiveSkillFromTeachingPractice
+
+
+R01 — Same-Level Skill Alignment
+----------------------------------------------------------------------
+Rule:
+
+TeachingPractice(?tp) ^
+LearningObjective(?lo) ^
+Skill(?s) ^
+Level(?l) ^
+developsSkill(?tp, ?s) ^
+achievesSkill(?lo, ?s) ^
+isPartOfLevel(?tp, ?l) ^
+isPartOfLevel(?lo, ?l)
+->
+alignsWith(?tp, ?lo)
+
+Validated structural breadth:
+
+Rule-body-satisfying TP–LO pairs:         483
+Already asserted alignsWith pairs:         15
+Expected novel alignsWith assertions:     468
+Observed novel alignsWith assertions:     468
+Unexpected novel assertions:                0
+Expected-but-missing assertions:             0
+
+Additional semantic review:
+
+Same-section novel alignments:             416
+Same-level cross-section alignments:        52
+
+All 52 same-level cross-section cases were reviewed in the retained Phase 2
+validation record; no clear semantic false positive was identified.
+
+R01 validation status:
+PASS / ACCEPT
+
+
+R02 — Objective Skill from Teaching Practice
+----------------------------------------------------------------------
+Rule:
+
+TeachingPractice(?tp) ^
+LearningObjective(?lo) ^
+Skill(?s) ^
+Level(?l) ^
+includesObjective(?tp, ?lo) ^
+developsSkill(?tp, ?s) ^
+isPartOfLevel(?tp, ?l) ^
+isPartOfLevel(?lo, ?l)
+->
+achievesSkill(?lo, ?s)
+
+Validated structural breadth:
+
+Rule-body-satisfying LO–Skill pairs:        557
+Already asserted achievesSkill pairs:       546
+Expected novel achievesSkill assertions:     11
+Observed novel achievesSkill assertions:     11
+Unexpected novel assertions:                  0
+Expected-but-missing assertions:               0
+
+R02 validation status:
+PASS / ACCEPT
+
+
+R01 + R02 Integration and Chaining
+----------------------------------------------------------------------
+The combined-rule validation compared the isolated R01 and R02 outputs with a
+fresh combined execution.
+
+Isolated R01 novel alignsWith assertions:   468
+Isolated R02 novel achievesSkill assertions: 11
+
+Expected additional chained alignsWith:       5
+Observed additional chained alignsWith:       5
+Unexpected chained assertions:                0
+Missing expected chained assertions:          0
+
+Combined alignsWith assertions:             473
+  = 468 isolated R01 results
+  +   5 expected chained additions
+
+Combined novel achievesSkill assertions:     11
+
+Integration status:
+PASS / ACCEPT
+
+
+Runtime and Interpretation Note
+----------------------------------------------------------------------
+The final fresh-process combined Drools execution reported:
+
+Total inferred runtime axioms: 5,901
+alignsWith axioms in combined output: 473
+achievesSkill axioms in combined output: 11
+
+IMPORTANT:
+
+The 5,901 inferred axioms are the complete Drools runtime inference output.
+They must NOT be interpreted as 5,901 novel SWRL rule-head assertions.
+
+SWRL rule execution was performed through SWRLAPI/Drools.
+
+HermiT was not used to execute the SWRL rules. HermiT was used separately for
+description-logic classification and for post-materialization safety checking
+of a temporary test copy.
+
+
+Post-Materialization Safety Verification
+----------------------------------------------------------------------
+A temporary combined inference test copy was materialized for validation.
+
+HermiT post-materialization result:
+
+Named unsatisfiable classes observed: 0
+Representative chained target:
+TP_1_1_4 alignsWith LO_1_4 — confirmed
+
+The temporary materialized test ontology was closed without saving.
+The authoritative final SWRL supplement was not materialized.
+
+
+Reviewer Interpretation
+----------------------------------------------------------------------
+The validated evidence supports the following claims:
+
+1. R01 adds controlled TeachingPractice-to-LearningObjective alignments when
+   the rule body is satisfied.
+
+2. R02 adds controlled LearningObjective-to-Skill assertions when the rule
+   body is satisfied.
+
+3. R02 can create a new achievesSkill premise that subsequently enables R01,
+   producing the expected R02-to-R01 chaining effect.
+
+4. Exact set comparisons found no unexpected and no missing novel rule-head
+   assertions in the validated isolated and combined tests.
+
+5. The frozen ClassicalGuitarOntology v1.6.0 baseline remained unmodified
+   throughout Phase 2.
+
+
+Full Evidence Record
+----------------------------------------------------------------------
+The detailed rule registers, test matrices, fresh-process Drools outputs,
+adversarial review records, screenshots, integration traces, and checksum
+records are retained in:
+
+ClassicalGuitarOntology_v1.6.0_Reproducibility_Package_Freeze_2026-08-31.zip
+
+Canonical archive SHA-256:
+
+eccce7420b505fe8e482bf0e9e000c3dd6f23e8e0e78836f6c5de1665a234cb2
+
+
+Final status
+----------------------------------------------------------------------
+R01_SameLevelSkillAlignment:              PASS / ACCEPT
+R02_ObjectiveSkillFromTeachingPractice:   PASS / ACCEPT
+R01 + R02 integration/chaining:           PASS / ACCEPT
+
+======================================================================
+END OF SWRL VALIDATION SUMMARY
+======================================================================

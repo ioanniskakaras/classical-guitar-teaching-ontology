@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use ClassicalGuitarOntology, please cite the current recommended release using the metadata below."
+message: "If you use ClassicalGuitarOntology v1.6.0, please cite this release using the metadata below."
 title: "ClassicalGuitarOntology"
 version: "v1.6.0"
 date-released: "2026-09-08"
@@ -21,4 +21,4 @@ keywords:
   - "ontology validation"
   - "provenance"
   - "reproducibility"
-abstract: "ClassicalGuitarOntology is an ontology for curriculum-based classical guitar education. The current recommended release, v1.6.0, represents all six curriculum levels and provides the authoritative frozen OWL 2 DL baseline together with a separately validated SWRL supplement, compact formal-validation evidence, and representative reasoning documentation. Earlier public releases are preserved as version-specific historical records."
+abstract: "ClassicalGuitarOntology v1.6.0 is the frozen OWL 2 DL release representing all six curriculum levels of classical guitar education. The public release includes the authoritative OWL baseline, a separately validated SWRL supplement, compact formal-validation evidence, and representative reasoning documentation. Detailed validation, competency-question, provenance, traceability, and integrity records are retained as part of the study documentation."

@@ -1,0 +1,343 @@
+CLASSICALGUITARONTOLOGY v1.6.0
+REPRESENTATIVE R02 -> R01 INFERENCE TRACE
+Reviewer-Facing Supplementary Evidence
+======================================================================
+
+Purpose
+----------------------------------------------------------------------
+This file presents one representative, provenance-controlled inference chain
+showing how the accepted SWRL rules R02 and R01 operate over the frozen
+ClassicalGuitarOntology v1.6.0 baseline.
+
+The example corresponds to CQ3B-01:
+"Can TP_1_1_4 be inferred to align pedagogically with LO_1_4 at Level 1?"
+
+Expected answer: YES
+Observed answer: YES
+Final Phase 3B decision: ACCEPT
+
+
+======================================================================
+1. KNOWLEDGE-LAYER DISTINCTIONS
+======================================================================
+
+ASSERTED OWL
+Knowledge explicitly present in the frozen baseline.
+
+OWL-INFERRED
+Knowledge entailed from asserted OWL axioms.
+
+SWRL-DERIVED
+Assertions produced by execution of the accepted SWRL rules.
+
+SPARQL RESULT
+Retrieval of already-existing asserted or derived knowledge.
+SPARQL does not create the inference.
+
+
+======================================================================
+2. R02 BINDINGS
+======================================================================
+
+?tp = TP_1_4_3
+?lo = LO_1_4
+?s  = Skill_FirstPositionFretboardRecognitionAndNaming
+?l  = Level_1
+
+
+======================================================================
+3. ASSERTED OWL PREMISES SUPPORTING R02
+======================================================================
+
+TeachingPractice(TP_1_4_3)
+
+LearningObjective(LO_1_4)
+
+InstrumentKnowledgeSkill(
+    Skill_FirstPositionFretboardRecognitionAndNaming
+)
+
+Level(Level_1)
+
+TP_1_4_3
+    includesObjective
+    LO_1_4
+
+TP_1_4_3
+    developsSkill
+    Skill_FirstPositionFretboardRecognitionAndNaming
+
+TP_1_4_3
+    isPartOfLevel
+    Level_1
+
+LO_1_4
+    isPartOfLevel
+    Level_1
+
+
+======================================================================
+4. OWL-INFERRED TYPE USED BY R02
+======================================================================
+
+Asserted class axiom:
+
+InstrumentKnowledgeSkill
+    SubClassOf
+    Skill
+
+Therefore:
+
+Skill(
+    Skill_FirstPositionFretboardRecognitionAndNaming
+)
+
+This typing is OWL-INFERRED and is kept distinct from the subsequent
+SWRL-derived assertions.
+
+
+======================================================================
+5. R02 EXECUTION
+======================================================================
+
+Accepted rule:
+
+R02_ObjectiveSkillFromTeachingPractice
+
+TeachingPractice(?tp) ^
+LearningObjective(?lo) ^
+Skill(?s) ^
+Level(?l) ^
+includesObjective(?tp, ?lo) ^
+developsSkill(?tp, ?s) ^
+isPartOfLevel(?tp, ?l) ^
+isPartOfLevel(?lo, ?l)
+->
+achievesSkill(?lo, ?s)
+
+
+With the bindings above, R02 derives:
+
+SWRL-DERIVED:
+
+LO_1_4
+    achievesSkill
+    Skill_FirstPositionFretboardRecognitionAndNaming
+
+
+======================================================================
+6. R01 DOWNSTREAM PREMISES
+======================================================================
+
+The R02 result becomes an input premise for R01.
+
+R01 bindings:
+
+?tp = TP_1_1_4
+?lo = LO_1_4
+?s  = Skill_FirstPositionFretboardRecognitionAndNaming
+?l  = Level_1
+
+
+Premises:
+
+TeachingPractice(TP_1_1_4)
+
+LearningObjective(LO_1_4)
+
+Skill(
+    Skill_FirstPositionFretboardRecognitionAndNaming
+)
+
+Level(Level_1)
+
+TP_1_1_4
+    developsSkill
+    Skill_FirstPositionFretboardRecognitionAndNaming
+
+LO_1_4
+    achievesSkill
+    Skill_FirstPositionFretboardRecognitionAndNaming
+    [SWRL-DERIVED BY R02]
+
+TP_1_1_4
+    isPartOfLevel
+    Level_1
+
+LO_1_4
+    isPartOfLevel
+    Level_1
+
+
+======================================================================
+7. R01 EXECUTION
+======================================================================
+
+Accepted rule:
+
+R01_SameLevelSkillAlignment
+
+TeachingPractice(?tp) ^
+LearningObjective(?lo) ^
+Skill(?s) ^
+Level(?l) ^
+developsSkill(?tp, ?s) ^
+achievesSkill(?lo, ?s) ^
+isPartOfLevel(?tp, ?l) ^
+isPartOfLevel(?lo, ?l)
+->
+alignsWith(?tp, ?lo)
+
+
+R01 derives:
+
+SWRL-DERIVED:
+
+TP_1_1_4
+    alignsWith
+    LO_1_4
+
+
+======================================================================
+8. COMPLETE REPRESENTATIVE CHAIN
+======================================================================
+
+ASSERTED OWL:
+
+TP_1_4_3 includesObjective LO_1_4
+TP_1_4_3 developsSkill Skill_FirstPositionFretboardRecognitionAndNaming
+TP_1_4_3 isPartOfLevel Level_1
+LO_1_4 isPartOfLevel Level_1
+
+plus required class typing
+
+            |
+            | R02_ObjectiveSkillFromTeachingPractice
+            v
+
+SWRL-DERIVED:
+
+LO_1_4 achievesSkill
+Skill_FirstPositionFretboardRecognitionAndNaming
+
+            |
+            | becomes a premise for R01
+            v
+
+ASSERTED OWL + R02-DERIVED PREMISE:
+
+TP_1_1_4 developsSkill
+Skill_FirstPositionFretboardRecognitionAndNaming
+
+TP_1_1_4 isPartOfLevel Level_1
+LO_1_4 isPartOfLevel Level_1
+
+            |
+            | R01_SameLevelSkillAlignment
+            v
+
+SWRL-DERIVED:
+
+TP_1_1_4 alignsWith LO_1_4
+
+
+======================================================================
+9. PROVENANCE CONTROL
+======================================================================
+
+The final target:
+
+TP_1_1_4 alignsWith LO_1_4
+
+was not asserted in the frozen baseline.
+
+In the controlled CQ3B-01 evaluation:
+
+Asserted-baseline-only retrieval:
+0 rows
+
+CQ-specific SWRL-derived graph:
+2 triples
+
+The two derived triples were exactly:
+
+1.
+LO_1_4 achievesSkill
+Skill_FirstPositionFretboardRecognitionAndNaming
+
+2.
+TP_1_1_4 alignsWith LO_1_4
+
+
+The final CQ query returned the target only when the designated
+SWRL-derived graph was included.
+
+Observed source graph:
+
+urn:cgo:phase3b:swrl-derived:cq3b-01
+
+
+======================================================================
+10. OWL-ONLY DIFFERENTIATION
+======================================================================
+
+For CQ3B-01, the retained Phase 3B validation record states that:
+
+- the final target was absent from the asserted frozen baseline; and
+- with the frozen baseline only and HermiT active, the final target was not
+  observed as an OWL-only inference.
+
+The final target therefore belongs to the controlled SWRL-dependent
+evaluation path represented above.
+
+
+======================================================================
+11. REVIEWER INTERPRETATION
+======================================================================
+
+This example demonstrates the specific reasoning claim made in the manuscript:
+
+1. R02 can derive a new LearningObjective-to-Skill relation from asserted
+   TeachingPractice, LearningObjective, Skill, and Level premises.
+
+2. The newly derived achievesSkill assertion can then satisfy a premise of R01.
+
+3. R01 can consequently derive a new TeachingPractice-to-LearningObjective
+   alignment within the same curriculum level.
+
+4. The derived assertions are kept provenance-distinct from the asserted
+   baseline.
+
+5. SPARQL retrieves the already-derived assertions; it does not create them.
+
+
+======================================================================
+12. FULL EVIDENCE RECORD
+======================================================================
+
+The complete CQ3B-01 definition, provenance trace, queries, results, graph
+isolation evidence, screenshots, validation-gate record, and checksum
+materials are retained in:
+
+ClassicalGuitarOntology_v1.6.0_Reproducibility_Package_Freeze_2026-08-31.zip
+
+Canonical archive SHA-256:
+
+eccce7420b505fe8e482bf0e9e000c3dd6f23e8e0e78836f6c5de1665a234cb2
+
+
+======================================================================
+FINAL STATUS
+======================================================================
+
+Representative chain: R02 -> R01
+CQ: CQ3B-01
+Expected answer: YES
+Observed answer: YES
+Asserted-baseline-only result: 0 rows
+SWRL-enabled result: target retrieved
+Final decision: ACCEPT
+
+======================================================================
+END OF REPRESENTATIVE INFERENCE TRACE
+======================================================================

@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/"
+     xml:base="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology/supplements/swrl">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology/supplements/swrl/1.0.0"/>
+        <owl:imports rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology/1.6.0"/>
+        <dc:creator xml:lang="en">Ioannis Kakaras</dc:creator>
+        <dc:creator xml:lang="el">Ιωάννης Κακάρας</dc:creator>
+        <rdfs:comment xml:lang="en">A separate SWRL rule layer for deriving pedagogical inferences from ClassicalGuitarOntology v1.6.0 without modifying the validated core ontology.</rdfs:comment>
+        <rdfs:comment xml:lang="el">Χωριστό επίπεδο κανόνων SWRL για την παραγωγή παιδαγωγικών συμπερασμάτων από την ClassicalGuitarOntology v1.6.0, χωρίς τροποποίηση της επικυρωμένης βασικής οντολογίας.</rdfs:comment>
+        <rdfs:label xml:lang="en">ClassicalGuitarOntology SWRL Supplement</rdfs:label>
+        <owl:versionInfo xml:lang="en">v1.0.0 · 28 August 2026. Final Phase 2 SWRL supplement containing the validated R01_SameLevelSkillAlignment and R02_ObjectiveSkillFromTeachingPractice rules. Both rules passed independent isolated validation, including positive and control tests, OWL-only/HermiT checks, post-materialization HermiT verification, and adversarial inference review. Combined R01+R02 integration validation also passed, including exact chaining completeness, traceability, semantic review, fresh-process Drools execution, temporary Drools-to-OWL materialization, and post-materialization HermiT verification. No additional SWRL rules are included. The frozen ClassicalGuitarOntology v1.6.0 baseline remains unmodified.</owl:versionInfo>
+        <owl:versionInfo xml:lang="el">v1.0.0 · 28 Αυγούστου 2026. Τελικό συμπλήρωμα SWRL της Phase 2 που περιλαμβάνει τους επικυρωμένους κανόνες R01_SameLevelSkillAlignment και R02_ObjectiveSkillFromTeachingPractice. Και οι δύο κανόνες πέρασαν ανεξάρτητη isolated επικύρωση, συμπεριλαμβανομένων positive και control tests, OWL-only/HermiT ελέγχων, post-materialization HermiT verification και adversarial inference review. Η συνδυασμένη επικύρωση R01+R02 ολοκληρώθηκε επίσης επιτυχώς, συμπεριλαμβανομένων exact chaining completeness, traceability, semantic review, fresh-process Drools execution, προσωρινού Drools-to-OWL materialization και post-materialization HermiT verification. Δεν περιλαμβάνονται πρόσθετοι SWRL rules. Η frozen ClassicalGuitarOntology v1.6.0 baseline παραμένει αμετάβλητη.</owl:versionInfo>
+        <skos:prefLabel xml:lang="el">Συμπλήρωμα κανόνων SWRL της ClassicalGuitarOntology</skos:prefLabel>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/tp">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/lo">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/l">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Infers alignment between a teaching practice and a learning objective when both address the same skill within the same curriculum level.</rdfs:comment>
+        <rdfs:label>R01_SameLevelSkillAlignment</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#TeachingPractice"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/tp"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#LearningObjective"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/lo"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#Skill"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#Level"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/l"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#developsSkill"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/tp"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/s"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#achievesSkill"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/lo"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/s"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#isPartOfLevel"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/tp"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/l"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#isPartOfLevel"/>
+                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/lo"/>
+                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/l"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#alignsWith"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/tp"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/lo"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Infers that a learning objective achieves a skill when its directly associated teaching practice develops that skill within the same curriculum level.</rdfs:comment>
+        <rdfs:label>R02_ObjectiveSkillFromTeachingPractice</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#TeachingPractice"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/tp"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#LearningObjective"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/lo"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#Skill"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#Level"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/l"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#includesObjective"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/tp"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/lo"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#developsSkill"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/tp"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/s"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#isPartOfLevel"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/tp"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/l"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#isPartOfLevel"/>
+                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/lo"/>
+                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/l"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology#achievesSkill"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/lo"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ioann/ontologies/2026/7/untitled-ontology-422/s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

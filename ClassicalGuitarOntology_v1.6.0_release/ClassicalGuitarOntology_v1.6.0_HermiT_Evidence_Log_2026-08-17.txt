@@ -1,0 +1,174 @@
+ClassicalGuitarOntology v1.6.0
+COMPACT HERMIT REASONER AND OWL 2 DL PROFILE EVIDENCE LOG
+======================================================================
+
+Evidence date: 2026-08-17 (Europe/Athens)
+Overall verification status: PASS
+
+1. ONTOLOGY ARTIFACT IDENTITY
+----------------------------------------------------------------------
+Normalized filename: ClassicalGuitarOntology_v1.6.0.owl
+Ontology IRI: http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology
+Version IRI: http://www.semanticweb.org/ioann/ontologies/2025/6/ClassicalGuitarTeachingMethodOntology/1.6.0
+File size: 3349997 bytes
+SHA-256: da8267d5a9be3bd68fe6114157effaeec8cbe377c6ed7cc147274dcc8ceaee36
+
+2. PROTEGE / HERMIT ENVIRONMENT
+----------------------------------------------------------------------
+Protégé Desktop: 5.6.3
+HermiT Reasoner plugin: 1.4.3.456
+OWL API: 4.5.26.2023-07-17T20:34:13Z
+Protégé JVM: 11.0.17+8
+Operating system recorded by Protégé: win32 (10.0.0), x86-64
+
+3. HERMIT CLASSIFICATION RESULT
+----------------------------------------------------------------------
+Ontology loaded successfully with imports closure: 2026-08-17 17:13:37.712
+Successful HermiT classifications recorded in the final session:
+  - 2026-08-17 18:42:26.300 — processed in 1577 ms
+  - 2026-08-17 18:45:24.271 — processed in 623 ms
+  - 2026-08-17 19:08:37.242 — processed in 579 ms
+  - 2026-08-17 19:09:02.437 — processed in 579 ms (final run)
+
+Final-session keyword scan, original lines 345590-345756:
+  ERROR occurrences: 0
+  EXCEPTION occurrences: 0
+  INCONSISTENT occurrences: 0
+  UNSATISFIABLE occurrences: 0
+
+Interpretation: the HermiT classification completed successfully without a
+recorded error or exception. In the corresponding Protégé inferred hierarchy,
+no named class was displayed beneath owl:Nothing. The raw log records successful
+processing; the no-named-unsatisfiable-classes observation is supported by the
+retained Protégé interface evidence from the same audit workflow.
+
+4. OWL 2 DL PROFILE VALIDATION
+----------------------------------------------------------------------
+ROBOT version: 1.9.10
+ROBOT runtime: Java 17.0.12 LTS, 64-bit
+Command: java -jar robot.jar validate-profile --profile DL --input "ClassicalGuitarOntology_v1.6.0.owl" --output "OWL2_DL_Profile_Report_v1.6.0.txt"
+Process exit code: 0
+Exact report output:
+OWL 2 DL Profile Report: [Ontology and imports closure in profile]
+Profile violations: 0
+Result: PASS — ontology and imports closure are in the OWL 2 DL profile.
+
+5. SOURCE EVIDENCE INTEGRITY
+----------------------------------------------------------------------
+Full Protégé log supplied for extraction:
+  Original supplied filename: 473ecc3b-0811-4bf1-aaae-164bc7a074cd.log
+  Size: 41649109 bytes
+  Line count: 345924
+  SHA-256: c74c223100378ca7cd7f0de208f80234d555524d847a8012584ea8e0ec162566
+
+ROBOT profile report supplied for verification:
+  Original supplied filename: 4f04103a-1452-4348-874b-9fd14099bbd8.txt
+  Size: 67 bytes
+  SHA-256: 82e9af84deb82760549964321b2898a85a26d91b5b40d372c8033d3dca0327da
+
+The excerpt below reproduces selected source lines verbatim and retains their
+original line numbers. Non-relevant historical sessions were excluded from this
+compact evidence file; the full source log remains the authoritative raw record.
+
+6. VERBATIM EXCERPT FROM THE FULL PROTEGE LOG
+----------------------------------------------------------------------
+--- Original protege.log lines 345614-345624 ---
+345614	2026-08-17 17:13:22.713 [FelixDispatchQueue] INFO  ProtegeApplication    ------------------------------------ Protege -----------------------------------
+345615	2026-08-17 17:13:22.717 [FelixDispatchQueue] INFO  ProtegeApplication    Protege Desktop
+345616	2026-08-17 17:13:22.717 [FelixDispatchQueue] INFO  ProtegeApplication    Version 5.6.3, Build 
+345617	2026-08-17 17:13:22.719 [FelixDispatchQueue] INFO  ProtegeApplication    
+345618	2026-08-17 17:13:22.719 [FelixDispatchQueue] INFO  ProtegeApplication    
+345619	2026-08-17 17:13:22.719 [FelixDispatchQueue] INFO  ProtegeApplication    ----------------------------------- Platform -----------------------------------
+345620	2026-08-17 17:13:22.720 [FelixDispatchQueue] INFO  ProtegeApplication    Java: JVM 11.0.17+8  Memory: 7516M
+345621	2026-08-17 17:13:22.720 [FelixDispatchQueue] INFO  ProtegeApplication    Language: el, Country: GR
+345622	2026-08-17 17:13:22.721 [FelixDispatchQueue] INFO  ProtegeApplication    Framework: Apache Software Foundation (1.9) 
+345623	2026-08-17 17:13:22.721 [FelixDispatchQueue] INFO  ProtegeApplication    OS: win32 (10.0.0)
+345624	2026-08-17 17:13:22.721 [FelixDispatchQueue] INFO  ProtegeApplication    Processor: x86-64
+--- Original protege.log lines 345627-345646 ---
+345627	2026-08-17 17:13:22.721 [FelixDispatchQueue] INFO  ProtegeApplication    ------------------------------------ Plugins -----------------------------------
+345628	2026-08-17 17:13:22.722 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: Cellfie Protege 5.0+ Plugin (2.1.0)
+345629	2026-08-17 17:13:22.722 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: OWL Code Generation Plug-in (2.0.0)
+345630	2026-08-17 17:13:22.722 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: ELK Reasoner Protege Plug-in (0.5.0)
+345631	2026-08-17 17:13:22.722 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: Existential Query (2.0.0)
+345632	2026-08-17 17:13:22.723 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: Explanation Workbench (3.0.1)
+345633	2026-08-17 17:13:22.723 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: OntoGraf (2.0.3)
+345634	2026-08-17 17:13:22.723 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: DL Query (4.0.1)
+345635	2026-08-17 17:13:22.724 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: HermiT Reasoner (1.4.3.456)
+345636	2026-08-17 17:13:22.724 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: Browser View (OWLDoc) (3.0.3)
+345637	2026-08-17 17:13:22.724 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: OWLViz (5.0.3)
+345638	2026-08-17 17:13:22.724 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: Proof Utility Library (0.1.0)
+345639	2026-08-17 17:13:22.725 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: OWLAPI RDF Library (3.0.0)
+345640	2026-08-17 17:13:22.725 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: SHACL4Protege (1.2.0)
+345641	2026-08-17 17:13:22.725 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: snap-sparql-query-plugin (6.0.0)
+345642	2026-08-17 17:13:22.725 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: SPARQL Query Plugin (3.0.0)
+345643	2026-08-17 17:13:22.726 [FelixDispatchQueue] INFO  ProtegeApplication    Plugin: SWRLTab Plugin (2.0.10)
+345644	2026-08-17 17:13:22.726 [FelixDispatchQueue] INFO  ProtegeApplication    
+345645	2026-08-17 17:13:23.438 [FelixDispatchQueue] INFO  ProtegeApplication    Creating and setting up empty (default) editor kit
+345646	2026-08-17 17:13:23.444 [FelixDispatchQueue] INFO  OWLEditorKit    OWL API Version: 4.5.26.2023-07-17T20:34:13Z
+--- Original protege.log lines 345653-345656 ---
+345653	2026-08-17 17:13:35.729 [AWT-EventQueue-0] INFO  OWLModelManagerImpl    ------------------------------- Loading Ontology -------------------------------
+345654	2026-08-17 17:13:35.729 [AWT-EventQueue-0] INFO  OWLModelManagerImpl    Loading ontology from file:/C:/Users/ioann/OneDrive/Desktop/Δ/ClassicalGuitarOntology/ClassicalGuitarOntology_v1.6.0.owl
+345655	2026-08-17 17:13:36.408 [pool-6-thread-1] INFO  OntologyLoader    Finished loading file:/C:/Users/ioann/OneDrive/Desktop/Δ/ClassicalGuitarOntology/ClassicalGuitarOntology_v1.6.0.owl
+345656	2026-08-17 17:13:37.712 [AWT-EventQueue-0] INFO  OWLModelManagerImpl    Loading for ontology and imports closure successfully completed in 1983 ms
+--- Original protege.log lines 345683-345701 ---
+345683	2026-08-17 18:42:24.721 [Classification Thread] INFO  OWLReasonerManager    ------------------------------- Running Reasoner -------------------------------
+345684	2026-08-17 18:42:25.167 [Classification Thread] INFO  OWLReasonerManager    Pre-computing inferences:
+345685	2026-08-17 18:42:25.167 [Classification Thread] INFO  OWLReasonerManager        - class hierarchy
+345686	2026-08-17 18:42:25.168 [Classification Thread] INFO  OWLReasonerManager        - object property hierarchy
+345687	2026-08-17 18:42:25.168 [Classification Thread] INFO  OWLReasonerManager        - data property hierarchy
+345688	2026-08-17 18:42:25.168 [Classification Thread] INFO  OWLReasonerManager        - class assertions
+345689	2026-08-17 18:42:25.168 [Classification Thread] INFO  OWLReasonerManager        - object property assertions
+345690	2026-08-17 18:42:25.168 [Classification Thread] INFO  OWLReasonerManager        - same individuals
+345691	2026-08-17 18:42:26.300 [Classification Thread] INFO  OWLReasonerManager    Ontologies processed in 1577 ms by HermiT
+345692	2026-08-17 18:42:26.302 [Classification Thread] INFO  OWLReasonerManager    
+345693	2026-08-17 18:45:23.647 [Classification Thread] INFO  OWLReasonerManager    ------------------------------- Running Reasoner -------------------------------
+345694	2026-08-17 18:45:23.698 [Classification Thread] INFO  OWLReasonerManager    Pre-computing inferences:
+345695	2026-08-17 18:45:23.698 [Classification Thread] INFO  OWLReasonerManager        - class hierarchy
+345696	2026-08-17 18:45:23.698 [Classification Thread] INFO  OWLReasonerManager        - object property hierarchy
+345697	2026-08-17 18:45:23.698 [Classification Thread] INFO  OWLReasonerManager        - data property hierarchy
+345698	2026-08-17 18:45:23.698 [Classification Thread] INFO  OWLReasonerManager        - class assertions
+345699	2026-08-17 18:45:23.698 [Classification Thread] INFO  OWLReasonerManager        - object property assertions
+345700	2026-08-17 18:45:23.698 [Classification Thread] INFO  OWLReasonerManager        - same individuals
+345701	2026-08-17 18:45:24.271 [Classification Thread] INFO  OWLReasonerManager    Ontologies processed in 623 ms by HermiT
+--- Original protege.log lines 345725-345744 ---
+345725	2026-08-17 19:08:36.662 [Classification Thread] INFO  OWLReasonerManager    ------------------------------- Running Reasoner -------------------------------
+345726	2026-08-17 19:08:36.712 [Classification Thread] INFO  OWLReasonerManager    Pre-computing inferences:
+345727	2026-08-17 19:08:36.712 [Classification Thread] INFO  OWLReasonerManager        - class hierarchy
+345728	2026-08-17 19:08:36.712 [Classification Thread] INFO  OWLReasonerManager        - object property hierarchy
+345729	2026-08-17 19:08:36.712 [Classification Thread] INFO  OWLReasonerManager        - data property hierarchy
+345730	2026-08-17 19:08:36.712 [Classification Thread] INFO  OWLReasonerManager        - class assertions
+345731	2026-08-17 19:08:36.712 [Classification Thread] INFO  OWLReasonerManager        - object property assertions
+345732	2026-08-17 19:08:36.712 [Classification Thread] INFO  OWLReasonerManager        - same individuals
+345733	2026-08-17 19:08:37.242 [Classification Thread] INFO  OWLReasonerManager    Ontologies processed in 579 ms by HermiT
+345734	2026-08-17 19:08:37.242 [Classification Thread] INFO  OWLReasonerManager    
+345735	2026-08-17 19:09:01.858 [Classification Thread] INFO  OWLReasonerManager    ------------------------------- Running Reasoner -------------------------------
+345736	2026-08-17 19:09:01.895 [Classification Thread] INFO  OWLReasonerManager    Pre-computing inferences:
+345737	2026-08-17 19:09:01.895 [Classification Thread] INFO  OWLReasonerManager        - class hierarchy
+345738	2026-08-17 19:09:01.895 [Classification Thread] INFO  OWLReasonerManager        - object property hierarchy
+345739	2026-08-17 19:09:01.896 [Classification Thread] INFO  OWLReasonerManager        - data property hierarchy
+345740	2026-08-17 19:09:01.896 [Classification Thread] INFO  OWLReasonerManager        - class assertions
+345741	2026-08-17 19:09:01.896 [Classification Thread] INFO  OWLReasonerManager        - object property assertions
+345742	2026-08-17 19:09:01.896 [Classification Thread] INFO  OWLReasonerManager        - same individuals
+345743	2026-08-17 19:09:02.437 [Classification Thread] INFO  OWLReasonerManager    Ontologies processed in 579 ms by HermiT
+345744	2026-08-17 19:09:02.438 [Classification Thread] INFO  OWLReasonerManager    
+--- Original protege.log lines 345745-345756 ---
+345745	2026-08-17 19:29:23.163 [AWT-EventQueue-0] INFO  OWLEditorKit    ------------------------ Saving Workspace and Ontologies -----------------------
+345746	2026-08-17 19:29:23.170 [AWT-EventQueue-0] INFO  TabbedWorkspace    Saved tab state for 'OWLViz' tab
+345747	2026-08-17 19:29:23.171 [AWT-EventQueue-0] INFO  TabbedWorkspace    Saved tab state for 'Active ontology' tab
+345748	2026-08-17 19:29:23.172 [AWT-EventQueue-0] INFO  TabbedWorkspace    Saved tab state for 'SPARQL Query' tab
+345749	2026-08-17 19:29:23.172 [AWT-EventQueue-0] INFO  TabbedWorkspace    Saved tab state for 'OntoGraf' tab
+345750	2026-08-17 19:29:23.173 [AWT-EventQueue-0] INFO  TabbedWorkspace    Saved tab state for 'SWRLTab' tab
+345751	2026-08-17 19:29:23.173 [AWT-EventQueue-0] INFO  TabbedWorkspace    Saved tab state for 'Classes' tab
+345752	2026-08-17 19:29:23.174 [AWT-EventQueue-0] INFO  TabbedWorkspace    Saved tab state for 'Entities' tab
+345753	2026-08-17 19:29:23.174 [AWT-EventQueue-0] INFO  TabbedWorkspace    Saved tab state for 'Object properties' tab
+345754	2026-08-17 19:29:23.175 [AWT-EventQueue-0] INFO  TabbedWorkspace    Saved tab state for 'Data properties' tab
+345755	2026-08-17 19:29:23.176 [AWT-EventQueue-0] INFO  TabbedWorkspace    Saved tab state for 'Individuals by class' tab
+345756	2026-08-17 19:29:23.176 [AWT-EventQueue-0] INFO  TabbedWorkspace    Saved workspace
+
+7. FINAL AUDIT CONCLUSION
+----------------------------------------------------------------------
+HermiT classification: PASS
+Named unsatisfiable classes displayed in Protégé: 0
+OWL 2 DL profile validation: PASS
+ROBOT profile violations: 0
+Final ontology SHA-256: da8267d5a9be3bd68fe6114157effaeec8cbe377c6ed7cc147274dcc8ceaee36
